@@ -1,1 +1,12 @@
+---run.sh---
+
+1. Create run.sh
+2. Place this code:
+   source /opt/conda/etc/profile.d/conda.sh
+   conda activate android_world_env
+   echo "Connecting to Genymotion emulator..."
+   adb connect 127.0.0.1:5555
+   echo "Waiting for emulator..."
+   adb wait-for-device
+   python /workspace/minimal_task_runner.py --task=ContactsAddContact
 
