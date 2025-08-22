@@ -18,7 +18,7 @@
 
 --Build Docker Image--
 1. In the Anaconda PowerShell, run: 
-   docker build -t android_world_geny_image
+   docker build -t android_world_geny_image .
    docker run -it `-v "C:/Users/Maria/Genymotion/tools:/platform-tools" `--privileged `android_world_geny_image `/bin/bash
    export PATH=$PATH:/platform-tools
    chmod +x run.sh
