@@ -1,1 +1,18 @@
+---Dockerfile---
+
+1. Download Anaconda 
+2. Download Docker Desktop
+3. Open the PowerSHell 
+4. Change the directory do that all the files are in one place 
+5. You can do this by: 
+   mkdir C:\Users\Maria\android_world_docker
+   cd C:\Users\Maria\android_world_docker
+6. Create the Dockerfile and place this code: 
+   FROM continuumio/anaconda3:latest
+   WORKDIR /workspace
+   COPY . /workspace
+   RUN apt-get update && apt-get install -y adb wget unzip curl
+   RUN conda create -y -n android_world_env python=3.10
+   RUN /bin/bash -c "source /opt/conda/etc/profile.d/conda.sh && conda activate android_world_env && pip install -r requirements.txt"
+   CMD ["/bin/bash"]
 
